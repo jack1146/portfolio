@@ -88,3 +88,12 @@ No live suspicious URL was opened.
 ### Learning Outcome
 This exercise improved my understanding of URL structure
 and common warning signs associated with suspicious links.
+## Testing
+
+- **Unit tests:** Written.
+- **Execution status:** Pending — tests have not yet been run.
+- **Result:** Not verified; no tests are claimed as passed.
+
+The test suite is intended to check empty input, hostname reporting, HTTP warnings, IP-address hostnames, and `@`-symbol warnings.
+
+**Next step:** Run the tests and record the actual results.
