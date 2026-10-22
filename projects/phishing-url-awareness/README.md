@@ -29,3 +29,10 @@ after the activities are completed.
 ## Safety
 This project is for education and defense.
 No suspicious links will be opened or executed.
+
+## URL Analysis Checklist
+- [ ] Inspect the hostname and domain spelling.
+- [ ] Check for misleading subdomains.
+- [ ] Look for unusual @ symbols and encoded text.
+- [ ] Remember that HTTPS alone does not prove safety.
+- [ ] Record observations without opening suspicious links.
