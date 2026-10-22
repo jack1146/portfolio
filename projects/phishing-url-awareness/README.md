@@ -36,3 +36,23 @@ No suspicious links will be opened or executed.
 - [ ] Look for unusual @ symbols and encoded text.
 - [ ] Remember that HTTPS alone does not prove safety.
 - [ ] Record observations without opening suspicious links.
+
+## Practical Exercise 1: Offline URL Review
+
+Status: Completed
+
+Scope: Three fictional training URLs reviewed offline.
+
+Observations:
+- A familiar-looking domain does not prove a site is safe.
+- The @ symbol can make a URL misleading.
+- An IP address and HTTP may warrant extra scrutiny.
+
+Limitations:
+- No live website was visited.
+- No external reputation service was queried.
+- These observations do not establish maliciousness.
+
+Lessons Learned:
+- Identify the actual hostname before trusting a URL.
+- Use multiple signals and trusted verification methods.
