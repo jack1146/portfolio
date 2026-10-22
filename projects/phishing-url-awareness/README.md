@@ -56,3 +56,35 @@ Limitations:
 Lessons Learned:
 - Identify the actual hostname before trusting a URL.
 - Use multiple signals and trusted verification methods.
+
+## Practical Report
+
+### Project Status
+In Progress
+
+### Exercise Completed
+Reviewed three fictional URLs offline.
+
+### Findings
+1. The actual hostname must be identified carefully.
+2. The @ symbol can make a URL misleading.
+3. HTTP and IP-based URLs may warrant additional scrutiny.
+
+### Evidence
+The findings above document an offline educational exercise.
+No live suspicious URL was opened.
+
+### Limitations
+- No live URL scanning was performed.
+- No external reputation database was checked.
+- The exercise cannot establish whether a real site is malicious.
+
+### Next Steps
+- Learn basic URL parsing.
+- Compare hostname and domain components.
+- Add a repeatable test method.
+- Document results and limitations.
+
+### Learning Outcome
+This exercise improved my understanding of URL structure
+and common warning signs associated with suspicious links.
