@@ -1,160 +1,364 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta name="theme-color" content="#0b1220">
+  <meta name="description" content="Jack's professional portfolio showcasing projects, technical skills, and continuous learning.">
   <title>Jack | Professional Portfolio</title>
 
   <style>
+    :root {
+      --bg: #0b1220;
+      --panel: #111c30;
+      --teal: #5eead4;
+      --text: #f1f5f9;
+      --muted: #a6b3c7;
+      --border: #26354b;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
 
     body {
-
       margin: 0;
-
-      font-family: Arial, sans-serif;
-
-      background: #0b1220;
-
-      color: #f1f5f9;
-
+      font-family: -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.7;
+    }
 
+    a { color: var(--teal); }
+
+    .container {
+      width: min(1040px, 90%);
+      margin: auto;
     }
 
     header {
-
-      padding: 20px;
-
-      text-align: center;
-
-      background: #111c30;
-
+      border-bottom: 1px solid var(--border);
+      background: rgba(11, 18, 32, .96);
     }
 
-    nav a {
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
 
-      color: #5eead4;
-
-      margin: 0 8px;
-
+    .brand {
+      color: var(--text);
+      font-size: 1.15rem;
+      font-weight: 800;
       text-decoration: none;
-
     }
 
-    main {
+    .brand span { color: var(--teal); }
 
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: .9rem;
+    }
+
+    .nav-links a:hover { color: var(--teal); }
+
+    .hero {
+      padding: 90px 0 76px;
+      border-bottom: 1px solid var(--border);
+      background:
+        radial-gradient(ellipse at top right,
+        #123044 0%, transparent 48%);
+    }
+
+    .eyebrow {
+      color: var(--teal);
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h1 {
       max-width: 760px;
-
-      margin: auto;
-
-      padding: 40px 20px;
-
+      margin: 16px 0;
+      font-size: clamp(2.5rem, 8vw, 4.6rem);
+      line-height: 1.12;
+      letter-spacing: -2px;
     }
 
-    h1, h2 { color: #5eead4; }
+    h1 span { color: var(--teal); }
 
-    .button {
+    .intro {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
 
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .btn {
       display: inline-block;
-
-      padding: 10px 18px;
-
-      background: #0d9488;
-
-      color: white;
-
+      padding: 11px 19px;
+      border: 1px solid var(--teal);
       border-radius: 8px;
-
+      background: var(--teal);
+      color: #07131c;
+      font-weight: 750;
       text-decoration: none;
-
     }
 
-    section { margin: 36px 0; }
+    .btn.secondary {
+      background: transparent;
+      color: var(--teal);
+    }
+
+    section { padding: 60px 0; }
+
+    .section-title {
+      margin: 0 0 8px;
+      font-size: 1.8rem;
+    }
+
+    .section-desc {
+      margin: 0 0 26px;
+      color: var(--muted);
+    }
+
+    .panel {
+      padding: 24px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      padding: 7px 12px;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      color: var(--teal);
+      font-size: .9rem;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+      gap: 18px;
+    }
+
+    .project {
+      padding: 23px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .project h3 { margin-top: 0; }
+
+    .project p { color: var(--muted); }
+
+    .project-label {
+      color: var(--teal);
+      font-size: .78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .project a {
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    .contact-box {
+      text-align: center;
+      padding: 34px 22px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
 
     footer {
-
+      padding: 25px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
       text-align: center;
-
-      padding: 20px;
-
-      color: #94a3b8;
-
+      font-size: .88rem;
     }
 
-  </style>
+    @media (max-width: 520px) {
+      nav {
+        padding: 16px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
 
+      .nav-links { gap: 14px; }
+      .hero { padding: 60px 0; }
+      section { padding: 44px 0; }
+      h1 { letter-spacing: -1px; }
+    }
+  </style>
 </head>
 
 <body>
-
   <header>
-
-    <h2>Jack's Portfolio</h2>
-
-    <nav>
-
-      <a href="#about">About</a>
-
-      <a href="#projects">Projects</a>
-
-      <a href="#contact">Contact</a>
-
+    <nav class="container">
+      <a class="brand" href="#home">JACK<span>.</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
     </nav>
-
   </header>
 
   <main>
-
-    <section>
-
-      <h1>Hello, I'm Jack 👋</h1>
-
-      <p>A beginner building professional skills
-
-      through practical projects and continuous learning.</p>
-
-      <a class="button" href="#projects">Explore My Projects</a>
-
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="eyebrow">Welcome to my portfolio</div>
+        <h1>Hi, I'm Jack.<br>
+          I build, learn & <span>grow.</span>
+        </h1>
+        <p class="intro">
+          I'm a student developing technical skills through
+          hands-on learning and practical projects.
+          This website is where I share my work,
+          document my progress, and explore new ideas.
+        </p>
+        <div class="actions">
+          <a class="btn" href="#projects">Explore Projects ↗</a>
+          <a class="btn secondary" href="#about">About Me</a>
+        </div>
+      </div>
     </section>
 
     <section id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-desc">
+          A little about my journey and goals.
+        </p>
+        <div class="panel">
+          I'm a beginner focused on building strong
+          technical foundations, learning by doing,
+          and creating projects that demonstrate
+          my progress. I believe in continuous learning,
+          curiosity, and responsible technology use.
+        </div>
+      </div>
+    </section>
 
-      <h2>About Me</h2>
-
-      <p>I'm learning technology and developing
-
-      practical skills through hands-on projects.
-
-      This portfolio documents my learning journey.</p>
-
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">Skills & Learning</h2>
+        <p class="section-desc">
+          Areas I'm developing through study and practice.
+        </p>
+        <div class="skills">
+          <span class="skill">HTML & CSS</span>
+          <span class="skill">Git & GitHub</span>
+          <span class="skill">Web Fundamentals</span>
+          <span class="skill">Problem Solving</span>
+          <span class="skill">Continuous Learning</span>
+        </div>
+        <p class="section-desc" style="margin-top:16px">
+          Add a skill only when it accurately reflects
+          your current knowledge.
+        </p>
+      </div>
     </section>
 
     <section id="projects">
+      <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-desc">
+          A growing collection of my practical work.
+        </p>
+        <div class="projects">
+          <article class="project">
+            <div class="project-label">01 · Web Development</div>
+            <h3>Personal Portfolio Website</h3>
+            <p>
+              A responsive portfolio built with HTML and CSS,
+              hosted using GitHub Pages.
+            </p>
+            <a href="https://github.com/jack1146/jack-portfolio">
+              View Source Code ↗
+            </a>
+          </article>
 
-      <h2>My Projects</h2>
+          <article class="project">
+            <div class="project-label">02 · Learning Project</div>
+            <h3>Project Two</h3>
+            <p>
+              Add a description of another project here
+              after you have completed it.
+            </p>
+            <span style="color:var(--muted)">
+              Coming soon
+            </span>
+          </article>
 
-      <p>My project showcase is coming soon.
-
-      Check back as I add new work.</p>
-
+          <article class="project">
+            <div class="project-label">03 · Practical Work</div>
+            <h3>Project Three</h3>
+            <p>
+              Share the problem you worked on,
+              your approach, and what you learned.
+            </p>
+            <span style="color:var(--muted)">
+              Coming soon
+            </span>
+          </article>
+        </div>
+      </div>
     </section>
 
     <section id="contact">
-
-      <h2>Contact</h2>
-
-      <p>Professional contact links will be added here.</p>
+      <div class="container">
+        <div class="contact-box">
+          <h2 class="section-title">Let's Connect</h2>
+          <p class="section-desc">
+            Interested in my work? You can find my
+            public projects on GitHub.
+          </p>
+          <a class="btn"
+             href="https://github.com/jack1146">
+            Visit My GitHub ↗
+          </a>
+        </div>
+      </div>
     </section>
-
   </main>
 
-  <footer>© 2026 Jack | Portfolio</footer>
-
+  <footer>
+    <div class="container">
+      © 2026 Jack · Built with HTML & CSS · Hosted on GitHub Pages
+    </div>
+  </footer>
 </body>
-
 </html>
